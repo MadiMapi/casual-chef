@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const routes = require("./routes");
 const MONGODB_URI = require("./config/keys");
-const mongoose = require("mongoose");
+var mongoose = require("mongoose");
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -17,9 +17,13 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 // // Use apiRoutes
 // app.use("/api", apiRoutes);
-mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://mpina:pineapple2018@ds217351.mlab.com:17351/heroku_sbrnnnf0");
+var mongoDB = "process.env.MONGODB_URI";
+mongoose.connect(mongoDB);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+mongoose.Promise = global.Promise;
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));

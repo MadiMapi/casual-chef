@@ -8,7 +8,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
 import Header from "../../components/Header/Header.jsx";
-import Footer from "../../components/Footer/Footer.jsx";
 import GridContainer from "../../components/Grid/GridContainer.jsx";
 import GridItem from "../../components/Grid/GridItem.jsx";
 import Button from "../../components/CustomButtons/Button.jsx";
@@ -19,7 +18,6 @@ import landingPageStyle from "../../assets/jss/material-kit-react/views/landingP
 
 // Sections for this page
 import TeamSection from "./Sections/TeamSection.jsx";
-import WorkSection from "./Sections/WorkSection.jsx";
 
 const dashboardRoutes = [];
 
@@ -52,11 +50,9 @@ class LandingPage extends React.Component {
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <WorkSection />
             <TeamSection />
           </div>
         </div>
-        <Footer />
       </div>;
   }
 }

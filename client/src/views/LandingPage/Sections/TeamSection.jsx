@@ -3,9 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-
 // @material-ui/icons
-
 // core components
 import GridContainer from "../../../components/Grid/GridContainer.jsx";
 import GridItem from "../../../components/Grid/GridItem.jsx";
@@ -17,8 +15,7 @@ import CardFooter from "../../../components/Card/CardFooter.jsx";
 import teamStyle from "../../../assets/jss/material-kit-react/views/landingPageSections/teamStyle.jsx";
 
 import team1 from "../../../assets/img/faces/mapiDev.jpg";
-import team2 from "../../../assets/img/faces/christian.jpg";
-import team3 from "../../../assets/img/faces/kendall.jpg";
+import team3 from "../../../assets/img/faces/madison.jpg";
 
 class TeamSection extends React.Component {
   render() {
