@@ -19,7 +19,7 @@ app.use(routes);
 // app.use("/api", apiRoutes);
 mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
-mongoose.connect(MONGODB_URI || "mongodb://mpina:pineapple2018@ds217351.mlab.com:17351/heroku_sbrnnnf0");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://mpina:pineapple2018@ds217351.mlab.com:17351/heroku_sbrnnnf0");
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
