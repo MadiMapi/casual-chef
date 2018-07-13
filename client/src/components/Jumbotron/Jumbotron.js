@@ -1,9 +1,11 @@
 import React from "react";
-import "./Jumbotron.css";
 
-const Jumbotron = () => (
-  <div className="jumbotron text-center">
-    <h1>Casual Chef</h1>
+const Jumbotron = ({ children }) => (
+  <div
+    style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
+    className="jumbotron"
+  >
+    {children}
   </div>
 );
 

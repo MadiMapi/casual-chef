@@ -7,8 +7,13 @@ Casual Chef is MERN app that makes it easier for people to meal prep and plan th
 
 ## Technologies Used
 * Mongo
+* mLab
+* Mongoose
 * Express
 * React
 * Node.js
 * Javascript
 * Postman
+* Material UI
+* Material Kit
+* Firebase 

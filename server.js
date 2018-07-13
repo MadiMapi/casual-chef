@@ -1,12 +1,11 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const PORT = process.env.PORT || 3001;
 const app = express();
-const apiRoutes = require("./routes/apiRoutes");
+const PORT = process.env.PORT || 3001;
+const routes = require("./routes");
 const MONGODB_URI = require("./config/keys");
 const mongoose = require("mongoose");
-
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -14,20 +13,15 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
-
-// Use apiRoutes
-app.use("/api", apiRoutes);
-
+// Add routes, both API and view
+app.use(routes);
+// // Use apiRoutes
+// app.use("/api", apiRoutes);
 mongoose.Promise = global.Promise;
+// Connect to the Mongo DB
+mongoose.connect(MONGODB_URI || "mongodb://mpina:pineapple2018@ds217351.mlab.com:17351/heroku_sbrnnnf0");
 
-mongoose.connect(
-	MONGODB_URI, {
-		useMongoClient: true
-	});
-
-// Send every request to the React app
-// Define any API routes before this runs
-app.get("*", function(req, res) {
+app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
