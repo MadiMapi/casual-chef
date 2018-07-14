@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const routes = require("./routes");
-const MONGODB_URI = require("./config/keys");
+var MONGODB_URI = require("./config/keys.js");
 var mongoose = require("mongoose");
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,8 +18,8 @@ app.use(routes);
 // // Use apiRoutes
 // app.use("/api", apiRoutes);
 // Connect to the Mongo DB
-var mongoDB = process.env.MONGODB_URI;
-mongoose.connect(mongoDB);
+// var mongoDB = MONGODB_URI;
+mongoose.connect(MONGODB_URI);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
