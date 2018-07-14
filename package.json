@@ -35,7 +35,7 @@
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
-    "client": "cd client && npm run start",
+    "client": "cd client && yarn start",
     "start-js": "react-scripts start",
     "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
     "seed": "node scripts/seedDB.js",
