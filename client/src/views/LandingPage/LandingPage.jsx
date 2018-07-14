@@ -3,9 +3,6 @@ import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-
-// @material-ui/icons
-
 // core components
 import Header from "../../components/Header/Header.jsx";
 import GridContainer from "../../components/Grid/GridContainer.jsx";

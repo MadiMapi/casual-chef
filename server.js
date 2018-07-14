@@ -18,7 +18,7 @@ app.use(routes);
 // // Use apiRoutes
 // app.use("/api", apiRoutes);
 // Connect to the Mongo DB
-var mongoDB = "process.env.MONGODB_URI";
+var mongoDB = process.env.MONGODB_URI;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
