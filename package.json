@@ -35,9 +35,9 @@
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
-    "client": "cd client && yarn start",
+    "client": "cd client && npm run start",
     "start-js": "react-scripts start",
-    "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
+    "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\" \"node server.js\"",
     "seed": "node scripts/seedDB.js",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
