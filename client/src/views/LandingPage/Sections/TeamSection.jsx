@@ -82,10 +82,7 @@ class TeamSection extends React.Component {
                 </h4>
                 <CardBody>
                   <p className={classes.description}>
-                    You can write here details about one of your team members.
-                    You can give more details about what they do. Feel free to
-                    add some <a href="#pablo">links</a> for people to be able to
-                    follow them outside the site.
+                    I could never decide what to make for dinner but now with Casual Chef we can all get access to the best recipes! You can connect with me on <a href="https://www.linkedin.com/in/madison-morris-854a4b150/">LinkedIn</a> for networking and more!
                   </p>
                 </CardBody>
                 <CardFooter className={classes.justifyCenter}>
